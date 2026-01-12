@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Quadradin</title>
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      position: relative;
+      overflow: hidden;
+      background: #f0f0f0;
+    }
+
+    #quadrado {
+      width: 50px;
+      height: 50px;
+      background: red;
+      position: absolute;
+      top: 100px;
+      left: 100px;
+    }
+
+    #obstáculo {
+    width: 50px;
+    height: 50px;
+    background: blue;
+    position: absolute;
+    top: 100px;
+    left: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="quadrado"></div>
+  <div></div>
+  <div id="obstáculo"></div>
+  <script>
+    const quadrado = document.getElementById("quadrado");
+    let x = 100;
+    let y = 100;
+    const velocidade = 10;
+    
+
+    document.addEventListener("keydown", (event) => {
+      switch (event.key) {
+        case "ArrowUp":
+          y -= velocidade;
+          break;
+        case "ArrowDown":
+          y += velocidade;
+          break;
+        case "ArrowLeft":
+          x -= velocidade;
+          break;
+        case "ArrowRight":
+          x += velocidade;
+          break;
+        case "w":
+          y -= velocidade;
+          break;
+        case "s":
+          y += velocidade;
+          break;
+        case "a":
+          x -= velocidade;
+          break;
+        case "d":
+          x += velocidade;
+          break;
+      }
+
+      quadrado.style.left = x + "px";
+      quadrado.style.top = y + "px";
+    });
+
+
+  </script>
+
+</body>
+</html>
